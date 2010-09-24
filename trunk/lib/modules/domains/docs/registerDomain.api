@@ -1,0 +1,47 @@
+
+registerDomain ( $domain, $opensrs, $owner, $admin, $billing, $tech ) 
+
+$domain = string
+    bare text string of the domain name to be registered.
+
+opensrs = array (associative)
+    username    =>  (string) opensrs username
+    password    =>  (string) opensrs password
+    period      =>  (integer) 1 to 10 (years)
+    reg_domain  =>  (string) domain name of any previously registered domain
+                    This "links" this new domain to an existing opensrs user
+                    profile.
+
+
+owner = array (associative)
+	'first_name'    =>  (string) required
+    'last_name'     =>  (string) required
+    'org_name'      =>  (string) required
+    'address1'      =>  (string) required
+    'address2'      =>  (string) optional
+    'address3'      =>  (string) optional
+    'city'          =>  (string) required
+    'state'         =>  (string) required ('WA')
+    'country'       =>  (string) required ('US')
+    'postal_code'   =>  (string) required (5 to 9 digit zip)
+    'email'         =>  (string) required
+    'phone'         =>  (string) required EPP Format Phone '+1.NNNNNNNNNNxYYYY'
+    'fax'           =>  (string) optional EPP Format
+    'lang_pref'     =>  (string) required, 'EN'
+
+admin, billing, and tech are all arrays that follow the same format as
+owner. If the data is the same you can simply call registerDomain like so:
+
+$result = registerDomain('domain.com',$opensrs,$owner,$owner,$owner,$owner)
+
+The arrays MUST be associative and MUST use the names shown - they get
+passed to the OpenSRS API "as-is" with no data validation on our part. (Let
+them validate it - they'll do it faster and better than we can anyway)
+
+The EPP Format Phone however IS something we'll validate before submitting.
+Format is irrelevant for COM and NET but is required to be in EPP for all
+others.
+
+FYI I've included the 'tech' contact array strictly for future use. It
+ignores whatever you send so the argument is optional. The system
+automatically uses our tech contact info and our nameservers.

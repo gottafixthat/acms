@@ -1,0 +1,317 @@
+BODY, DIV {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    color: #000000;
+    background-color: #FFFFFF;
+    font-weight: normal;
+    font-size: 14px; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+}
+
+IMG {
+    margin-top: 0px;
+    margin-left: 0px
+}
+
+img.padded {
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+TH, TD { font-family: Trebuchet MS, Arial, Sans-Serif; font-size: 14px; }
+H1 { font-size: 175%; font-family: Trebuchet MS, Arial, Sans-Serif; }
+H2 { font-size: 150%; font-family: Trebuchet MS, Arial, Sans-Serif; } 
+H3 { font-size: 125%; font-family: Trebuchet MS, Arial, Sans-Serif; }
+H4 { font-size: 100%; font-family: Trebuchet MS, Arial, Sans-Serif; } 
+H5 { font-size: 75%; font-family: Trebuchet MS, Arial, Sans-Serif; }
+H6 { font-size: 50%; font-family: Trebuchet MS, Arial, Sans-Serif; }
+PRE, TT, CODE { 
+    font-family: courier, sans-serif;
+    font-size: 14px; 
+}
+A:link { 
+    color: #0F0F90;
+}
+A:visited { 
+    color: #0F0F90;
+}
+A:active { 
+    color: #0F0F90;
+}
+A:hover { 
+    color: #0F0FFF;
+}
+
+.navbar {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+a.navbar:link { 
+    color: #0F0F90;
+}
+a.navbar:active { 
+    color: #0F0F90;
+}
+a.navbar:visited { 
+    color: #0F0F90;
+}
+a.navbar:hover { 
+    text-decoration: underline,overline;
+    color: #0F0FFF;
+}
+
+a.nounderline:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.nounderline:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.nounderline:hover {
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
+a.nounderline:active {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.maintable {
+    text-decoration: none; 
+    font-family: Lucida Console, QuickType Mono, Monospace, Terminal, Trebuchet MS, Verdana, Arial, Helvetica, Fixed;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.articlebox {
+    text-decoration: none; 
+    font-family: Lucida Console, QuickType Mono, Monospace, Terminal, Trebuchet MS, Verdana, Arial, Helvetica, Fixed;
+    font-size: 14px;
+    color: #C9C9C9;
+    background-color: #C9C9C9;
+}
+
+.sectionheader {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFC25A;
+    background-color: #08007B;
+}
+div.sectionheader a:link { 
+    color: #FFFFFF;
+}
+div.sectionheader a:active { 
+    color: #FFFFFF;
+}
+div.sectionheader a:visited { 
+    color: #FFFFFF;
+}
+div.sectionheader a:hover { 
+    color: #EEEEEE;
+}
+.sectionheader a:link { 
+    color: #FFFFFF;
+}
+.sectionheader a:active { 
+    color: #FFFFFF;
+}
+.sectionheader a:visited { 
+    color: #FFFFFF;
+}
+.sectionheader a:hover { 
+    color: #EEEEEE;
+}
+
+
+.sectionbody {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFF2CF;
+}
+
+
+.blocktitle {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFC25A;
+    background-color: #08007B;
+}
+
+.articlesubheader {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFE8;
+    background-color: #080088;
+}
+
+div.articlesubheader a:link { 
+    color: #FFFFFF;
+}
+div.articlesubheader a:active { 
+    color: #FFFFFF;
+}
+div.articlesubheader a:visited { 
+    color: #FFFFFF;
+}
+div.articlesubheader a:hover { 
+    color: #EEEEEE;
+}
+
+.listevenrow {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #000033;
+    background-color: #FFFFE1;
+}
+
+.listevenrowbold {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000033;
+    background-color: #FFFFE1;
+}
+
+
+.listoddrow {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #000033;
+    background-color: #FFF2CF;
+}
+
+.listoddrowbold {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000033;
+    background-color: #FFF2CF;
+}
+
+.nestedbox {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #000033;
+    background-color: #FFFFF0;
+}
+
+.messagebody {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #000033;
+    background-color: #FFFFFF;
+}
+
+.borderbox {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    background-color: #ffffff;
+}
+
+.messagebodyfixed {
+    text-decoration: none; 
+    font-family: Lucida Console, QuickType Mono, Monospace, Terminal, Trebuchet MS, Verdana, Arial, Helvetica, Fixed;
+    font-size: 14px;
+    color: #000033;
+    background-color: #FFFFFF;
+}
+
+.boxcontent {
+    text-decoration: none; 
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 14px;
+    color: #000000;
+    background-color: #FFF2CF;
+}
+
+.indent {
+    margin-left: 40px;
+}
+
+.inset {
+    margin-left:  40px;
+    margin-right: 40px;
+}
+
+.phpdigHighlight { 
+    color: #336666;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+/* A simple box is just a div with a border around and some margin 
+ * used for example in the admin screen */
+div.fgaldesc, div.galdesc, div.simplebox {
+	margin-left:    1px;
+	margin-right:   4px;
+	margin-top:   5px;
+	margin-bottom:   5px;
+	padding-left:   2px;
+	padding-top:   2px;
+	padding-bottom:   2px;
+	padding-right:   5px;
+	color:   transparent;
+	border:   1px solid black;
+}
+
+div.shadedbox {
+	margin-left:    1px;
+	margin-right:   4px;
+	margin-top:   5px;
+	margin-bottom:   5px;
+	padding-left:   2px;
+	padding-top:   2px;
+	padding-bottom:   2px;
+	padding-right:   5px;
+	color:   transparent;
+    background-color: #E0E0E0;
+	border:   1px solid black;
+}
+
+.topic-header {
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 0px 0px 0px;
+    border-bottom: 1px solid #08007B;
+}
+
+.servicePricingMonthlyHeader {
+    color: #000000;
+    background-color: #fffaaa;
+    border-bottom: 1px solid #cccccc;
+}
+.servicePricingHeader {
+    color: #000000;
+    background-color: #fffaaa;
+    border-bottom: 1px solid #000000;
+}

@@ -1,0 +1,542 @@
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    color: #000000;
+    background-color: #FFFFFF;
+    font-weight: normal;
+    font-size: 10px; 
+    font-family: Bitstream Vera Sans, Microsoft Sans Serif, Arial, Helvetica, sans-serif;
+}
+
+DIV {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    color: transparent;
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 12px; 
+}
+
+td { font-size: 12px; }
+th { font-size: 10px; }
+
+H1 { font-size: 175%; }
+H2 { font-size: 150%; }
+H3 { font-size: 1.1em; }
+H4 { font-size: 100%; } 
+H5 { font-size: 75%; }
+H6 { font-size: 50%; }
+
+IMG {
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+img.padded {
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+PRE, TT, CODE { 
+    font-family: courier, sans-serif;
+}
+A:link { 
+    color: #500000;
+    text-decoration: 1px underline #0f0fff;
+}
+A:visited { 
+    color: #500000;
+    text-decoration: 1px underline #0f0fff;
+}
+A:active { 
+    color: #fe5200;
+    text-decoration: 1px underline #0f0fff;
+}
+A:hover { 
+    text-decoration: 1px underline,overline #0f0fff;
+    color: #fe5200;
+}
+
+.header {
+    margin-left: 3px;
+    text-decoration: none; 
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.header a:link { 
+    color: #fe5200;
+}
+.header a:visited { 
+    color: #fe5200;
+}
+.header a:active { 
+    color: #fa9148;
+}
+.header a:hover { 
+    text-decoration: underline overline;
+    color: #fa9148;
+}
+
+.navbar {
+    margin-left: 3px;
+    text-decoration: none; 
+    color: #000000;
+    background-color: #FFFFFF;
+}
+.navbar a:link { 
+    color: #0F0F90;
+}
+.navbar a:active { 
+    color: #0F0F90;
+}
+.navbar a:visited { 
+    color: #0F0F90;
+}
+.navbar a:hover { 
+    text-decoration: underline overline;
+    color: #0F0FFF;
+}
+
+.nounderline a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nounderline a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nounderline a:hover {
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
+.nounderline a:active {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.maintable {
+    text-decoration: none; 
+    color: #000000;
+    background-color: transparent;
+}
+
+.articlebox {
+    text-decoration: none; 
+    color: #888888;
+    background-color: #ffffff;
+}
+
+.secondaryheader {
+	padding-left:   0px;
+	padding-top:   0px;
+	padding-bottom:   0px;
+	padding-right:   5px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-decoration: none; 
+    font-weight: normal;
+    text-align: right;
+    color: #ffffff;
+    background-color: #fe5200;
+    border-bottom: 2px solid #ff914c;
+    border-top: 2px solid #ff914c;
+}
+
+.secondaryheaderinput {
+    margin-top: 2px;
+    margin-bottom: 3px;
+    background-color: #ffffff;
+    text-align: left;
+    color: #000000;
+}
+
+.footer {
+	padding-left:   0px;
+	padding-top:   0px;
+	padding-bottom:   0px;
+	padding-right:   0px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    text-decoration: none; 
+    font-weight: normal;
+    text-align: right;
+    text-align: right;
+    color: #ffffff;
+    background-color: #000000;
+    border-bottom: 1px solid #fe5200;
+    border-top: 1px solid #ff914c;
+}
+
+
+.infoblocks {
+	padding-left:   0px;
+	padding-top:   2px;
+	padding-bottom:   2px;
+	padding-right:   0px;
+    border-right: 1px dotted #fe5200;
+}
+
+.infohr {
+    margin-right: 0px;
+    padding-right: 0px;
+    border-top: 1px solid #fe5200;
+    border-bottom: 1px solid #fe5200;
+    background-color: #000000;
+    color: #000000;
+    height: 4px;
+
+}
+
+.infoheader {
+    margin-top: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 0px;
+    padding-left: 4px;
+    text-decoration: none; 
+    font-weight: bold;
+    color: #000000;
+    background-color: transparent;
+    border-bottom: 1px solid #fe5200;
+}
+
+div.infoheader a:link { 
+    color: #0F0F90;
+}
+div.infoheader a:active { 
+    color: #0F0F90;
+}
+div.infoheader a:visited { 
+    color: #0F0F90;
+}
+div.infoheader a:hover { 
+    color: #0F0F90;
+}
+
+.infoheader a:link { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+.infoheader a:active { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+.infoheader a:visited { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+.infoheader a:hover { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+
+.sectionheader {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-left: 4px;
+    text-decoration: none; 
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000;
+    border-top: 3px solid #fe5200;
+    border-bottom: 1px solid #ff914c;
+}
+
+div.sectionheader a:link { 
+    color: #0F0F90;
+}
+div.sectionheader a:active { 
+    color: #0F0F90;
+}
+div.sectionheader a:visited { 
+    color: #0F0F90;
+}
+div.sectionheader a:hover { 
+    color: #0F0F90;
+}
+
+.sectionheader a:link { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+.sectionheader a:active { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+.sectionheader a:visited { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+.sectionheader a:hover { 
+    color: #0F0F90;
+    font-weight: normal;
+}
+
+.sectionbody {
+    text-decoration: none; 
+    color: #000000;
+    background-color: #FFFFFF;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+
+.blocktitle {
+    text-decoration: none; 
+    font-weight: bold;
+    color: #FFC25A;
+    background-color: #08007B;
+}
+
+.articlesubheader {
+    text-decoration: none; 
+    font-weight: bold;
+    color: #000000;
+    background-color: #FFFFFF;
+    border-bottom: 1px dotted #071b5c;
+}
+div.articlesubheader a:link { 
+    color: #FFFFFF;
+}
+div.articlesubheader a:active { 
+    color: #FFFFFF;
+}
+div.articlesubheader a:visited { 
+    color: #FFFFFF;
+}
+div.articlesubheader a:hover { 
+    color: #EEEEEE;
+}
+
+
+.listevenrow {
+    text-decoration: none; 
+    color: #000000;
+    background-color: #cccccc;
+}
+
+.listevenrowbold {
+    text-decoration: none; 
+    font-weight: bold;
+    color: #000000;
+    background-color: #cccccc;
+}
+
+
+.listoddrow {
+    text-decoration: none; 
+    color: #000000;
+    background-color: transparent;
+}
+
+.listoddrowbold {
+    text-decoration: none; 
+    font-weight: bold;
+    color: #000000;
+    background-color: transparent;
+}
+
+.messagebody {
+    text-decoration: none; 
+    color: #000033;
+    background-color: #FFFFFF;
+}
+
+
+.messagebodyfixed {
+    text-decoration: none; 
+    color: #000033;
+    background-color: #FFFFFF;
+}
+
+.boxcontent {
+    text-decoration: none; 
+    color: #000000;
+    background-color: #FFF2CF;
+}
+
+.indent {
+    margin-left: 40px;
+}
+
+.inset {
+    margin-left:  40px;
+    margin-right: 40px;
+}
+
+.phpdigHighlight { 
+    color: #336666;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+/* A simple box is just a div with a border around and some margin 
+ * used for example in the admin screen */
+div.fgaldesc, div.galdesc, div.simplebox {
+	margin-left:    1px;
+	margin-right:   4px;
+	margin-top:   5px;
+	margin-bottom:   5px;
+	padding-left:   2px;
+	padding-top:   2px;
+	padding-bottom:   2px;
+	padding-right:   5px;
+	color:   transparent;
+	border:   1px solid black;
+}
+
+/* A simple box is just a div with a border around and some margin 
+ * used for example in the admin screen */
+div.shadedbox {
+	margin-left:    1px;
+	margin-right:   4px;
+	margin-top:   5px;
+	margin-bottom:   5px;
+	padding-left:   2px;
+	padding-top:   2px;
+	padding-bottom:   2px;
+	padding-right:   5px;
+	color:   #000000;
+    background-color: #cccccc;
+	border:   1px solid #db500c;
+}
+
+.topic-header {
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 0px 0px 0px;
+    border-bottom: 1px solid #08007B;
+}
+
+div.catconNav {
+	margin-left:    0px;
+	margin-right:   0px;
+	margin-top:   0px;
+	margin-bottom:   5px;
+	padding-left:   5px;
+	padding-top:   2px;
+	padding-bottom:   2px;
+	padding-right:   5px;
+	color:   transparent;
+    background-color: #cccccc;
+	border-bottom: 1px solid #fe5200;
+	border-left: 1px solid #fe5200;
+	border-right: 1px solid #fe5200;
+}
+
+.catconChildLink {
+    font-weight: bold;
+    text-decoration: none;
+	margin-left:    0px;
+	margin-right:   0px;
+	margin-top:   0px;
+	margin-bottom:   4px;
+	padding-left:   0px;
+	padding-top:   2px;
+	padding-bottom:   0px;
+	padding-right:   2px;
+	color:   transparent;
+    border-bottom: 1px dashed #808080;
+    background-color: #cccccc;
+}
+
+.catconChildLink:link, .catconChildLink:visited, .catconChildLink:active, {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px dashed #db500c;
+}
+
+.catconChildLink:hover {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid #fe5200;
+}
+
+
+div.catconChildContent {
+	margin-left:    0px;
+	margin-right:   0px;
+	margin-top:   0px;
+	margin-bottom:   5px;
+	padding-left:   0px;
+	padding-top:   0px;
+	padding-bottom:   5px;
+	padding-right:   5px;
+	color:   transparent;
+}
+
+.servicePricingClassHeader {
+    color: #000000;
+    background-color: transparent;
+    font-weight: bold;
+    border-bottom: 1px solid #cccccc;
+}
+.servicePricingMonthlyHeader {
+    color: #000000;
+    background-color: #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.servicePricingHeader {
+    color: #000000;
+    background-color: #cccccc;
+    border-bottom: 1px solid #000000;
+}
+
+.servicePricing:link, .servicePricing:visited, .servicePricing:active { 
+    color: #500000;
+    text-decoration: none;
+    border-bottom: 1px solid #500000;
+}
+.servicePricing:hover { 
+    text-decoration: 1px underline,overline #fe5200;
+    color: #fe5200;
+}
+
+.fineprint {
+    color: #000000;
+    background-color: transparent;
+    border-top: 1px solid #000000;
+    padding-top: 0px;
+    font-size: .9em; 
+}
+
+
+.mouseover a:link, .mouseover a:visited, .mouseover a:active, .mouseover a:hover {
+    color: #222222;
+    text-decoration: none;
+    border-bottom: 1px dashed #999999;
+}
+
+.moTextFont {
+    color: #000000;
+    background-color: #E0E0E0;
+}
+.moCaption {
+    font-weight: bold;
+    color: #ffffcc;
+    background-color: #08007B;
+}
+.moBackground {
+    font-weight: bold;
+    color: #ffffcc;
+    background-color: #08007B;
+}
