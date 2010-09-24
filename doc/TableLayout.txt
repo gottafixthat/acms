@@ -1,0 +1,305 @@
+#
+# Chunks - Chunks are the building blocks of BCMS.  They are whate are what
+#          puts together, blocks, pages, articles, images, and all other 
+#          forms of content.
+#
+# More will need to be put in here, in the form of security, etc.
+# but for now, we'll do a quick and dirty version and expand on it later.
+
+CREATE TABLE SiteConfig (
+    CfgName     varchar(64) NOT NULL DEFAULT '',
+    CfgVal      varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY (CfgName)
+);
+
+CREATE TABLE Chunks (
+    ChunkID     bigint(21) NOT NULL DEFAULT 0 auto_increment,
+    ChunkName   varchar(64) NOT NULL DEFAULT '',
+    Handler     varchar(64) NOT NULL DEFAULT '',
+    Filename    varchar(64) NOT NULL DEFAULT '',
+    MimeType    varchar(64) NOT NULL DEFAULT '',
+    Title       varchar(64) NOT NULL DEFAULT '',
+    Weight      int NOT NULL DEFAULT '0',
+    Active      int NOT NULL DEFAULT '1',
+    ShowPersistant  int NOT NULL DEFAULT '1',
+    Chunk       blob NOT NULL DEFAULT '',
+    PRIMARY KEY (ChunkID),
+    INDEX ChunkNameIDX (ChunkName),
+    INDEX HandlerIDX (Handler)
+);
+
+CREATE TABLE Chunks_image (
+    ChunkID         bigint(21) NOT NULL DEFAULT '0',
+    Filename        varchar(64) NOT NULL DEFAULT '0',
+    MimeType        varchar(64) NOT NULL DEFAULT '0',
+    Width           int NOT NULL DEFAULT '0',
+    Height          int NOT NULL DEFAULT '0',
+    PRIMARY KEY (ChunkID)
+);
+
+CREATE TABLE Chunks_page (
+    ChunkID         bigint(21) NOT NULL DEFAULT '0',
+    LinkText        varchar(64) NOT NULL DEFAULT '',
+    Title           varchar(64) NOT NULL DEFAULT '',
+    ShowPersistant  int NOT NULL DEFAULT '1',
+    PRIMARY KEY (ChunkID)
+);
+
+CREATE TABLE Chunks_block (
+    ChunkID         bigint(21) NOT NULL DEFAULT '0',
+    Persistant      int NOT NULL DEFAULT '0',
+    Zone            int NOT NULL DEFAULT '0',
+    TitleNav        varchar(255) NOT NULL DEFAULT '',
+    Footer          varchar(255) NOT NULL DEFAULT '',
+    FooterNav       varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY (ChunkID)
+);
+
+CREATE TABLE Chunks_menu (
+    ChunkID         bigint(21) NOT NULL DEFAULT '0',
+    DefaultStyle    varchar(32) NOT NULL DEFAULT '',
+    PRIMARY KEY (ChunkID)
+);
+
+CREATE TABLE Chunks_story (
+    ChunkID         bigint(21) NOT NULL DEFAULT '0',
+    Title           varchar(255) NOT NULL DEFAULT '',
+    Submitter       bigint(21) NOT NULL DEFAULT '0',
+    Approved        int NOT NULL DEFAULT '0',
+    PostDate        datetime NOT NULL,
+    ExpireDate      datetime NOT NULL,
+    PRIMARY KEY (ChunkID)
+);
+
+CREATE TABLE Categories (
+    CategoryID      bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    ParentID        bigint(21) NOT NULL DEFAULT '0',
+    Title           varchar(64) NOT NULL DEFAULT '',
+    IconTag         varchar(255) NOT NULL DEFAULT '',
+    Description     blob NOT NULL DEFAULT '',
+    PRIMARY KEY (CategoryID),
+    INDEX TitleIDX(Title)
+);
+
+CREATE TABLE CategoryItems (
+    CategoryItemID  bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    CategoryID      bigint(21) NOT NULL DEFAULT '0',
+    ChunkID         bigint(21) NOT NULL DEFAULT '0',
+    PRIMARY KEY(CategoryItemID),
+    INDEX CategoryIDIDX(CategoryID),
+    INDEX ChunkIDIDX(ChunkID)
+);
+
+CREATE TABLE Sessions (
+    SessionID       varchar(40) NOT NULL DEFAULT '',
+    LastMod         timestamp(14) NOT NULL DEFAULT '',
+    SessionData     blob NOT NULL DEFAULT '',
+    PRIMARY KEY (SessionID)
+);
+
+CREATE TABLE ACLs (
+    ACLID           bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    ACLName         varchar(64) NOT NULL DEFAULT '',
+    PRIMARY KEY(ACLID)
+);
+
+CREATE TABLE ACLRules (
+    ACLRuleID       bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    ACLID           bigint(21) NOT NULL DEFAULT '0',
+    Weight          int(11) NOT NULL DEFAULT '0',
+    Operator        varchar(16) NOT NULL DEFAULT '',
+    Identifier      varchar(64) NOT NULL DEFAULT '',
+    IDValue         varchar(64) NOT NULL DEFAULT '',
+    ACLRead         int(11) NOT NULL DEFAULT '0',
+    ACLEdit         int(11) NOT NULL DEFAULT '0',
+    ACLCreate       int(11) NOT NULL DEFAULT '0',
+    ACLDelete       int(11) NOT NULL DEFAULT '0',
+    PRIMARY KEY(ACLRuleID),
+    INDEX ACLIDIDX(ACLID)
+);
+
+CREATE TABLE Menus (
+    MenuID          bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    MenuName        varchar(64) NOT NULL DEFAULT '',
+    MenuTitle       varchar(255) NOT NULL DEFAULT '',
+    Spacer          varchar(255) NOT NULL DEFAULT '',
+    AccessList      int(11) NOT NULL DEFAULT '0',
+    PRIMARY KEY(MenuID),
+    INDEX MenuNameIDX(MenuName)
+);
+
+CREATE TABLE MenuItems (
+    MenuItemID      bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    MenuID          bigint(21) NOT NULL DEFAULT '0',
+    ParentID        bigint(21) NOT NULL DEFAULT '0',
+    Weight          int(11) NOT NULL DEFAULT '0',
+    AccessList      int(11) NOT NULL DEFAULT '0',
+    ItemType        int(11) NOT NULL DEFAULT '0',
+    ItemName        varchar(255) NOT NULL DEFAULT '',
+    ItemContent     varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY(MenuItemID),
+    INDEX MenuIDIDX(MenuID)
+);
+
+CREATE TABLE Users (
+    UserID          bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    UserName        varchar(64) NOT NULL DEFAULT '',
+    GroupID         bigint(21) NOT NULL DEFAULT '0',
+    PRIMARY KEY(UserID),
+    INDEX UserNameIDX(UserName)
+);
+
+CREATE TABLE Groups (
+    GroupID         bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    GroupName       varchar(64) NOT NULL DEFAULT '',
+    PRIMARY KEY(GroupID),
+    INDEX GroupNameIDX(GroupName)
+);
+
+CREATE TABLE GroupMembers (
+    GroupMemberID   bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    GroupID         bigint(21) NOT NULL DEFAULT '0',
+    UserID          bigint(21) NOT NULL DEFAULT '0',
+    PRIMARY KEY(GroupMemberID),
+    INDEX GroupIDIDX(GroupID),
+    INDEX UserIDIDX(UserID)
+);
+
+CREATE TABLE mod_aspstats (
+    InternalID      bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    VirusToday      bigint(21) NOT NULL DEFAULT '0',
+    VirusTotal      bigint(21) NOT NULL DEFAULT '0',
+    SpamToday       bigint(21) NOT NULL DEFAULT '0',
+    SpamTotal       bigint(21) NOT NULL DEFAULT '0',
+    TotalDate       date NOT NULL DEFAULT '0000-00-00',
+    LastUpdate      datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+    PRIMARY KEY(InternalID)
+);
+
+# The qwest_npanxx table contains all of the area codes and prefixes
+# that we can provide service in
+CREATE TABLE mod_signup_qwest_npanxx (
+    NPA             int NOT NULL DEFAULT '0',
+    NXX             int NOT NULL DEFAULT '0',
+    LATA            int NOT NULL DEFAULT '0',
+    PRIMARY KEY(NPA,NXX)
+);
+
+# The qwest_quals table contains all of the phone numbers that
+# we have qualified for DSL.
+CREATE TABLE mod_signup_qwest_quals (
+    PhoneNumber     bigint(21) NOT NULL DEFAULT '0',
+    QualDate        date NOT NULL DEFAULT '0000-00-00',
+    Qualifies       int NOT NULL DEFAULT '0',
+    QualCode        varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY(PhoneNumber)
+);
+
+# The verizon_npanxx table contains all of the area codes and prefixes
+# that we can provide service in
+CREATE TABLE mod_signup_verizon_npanxx (
+    NPA             int NOT NULL DEFAULT '0',
+    NXX             int NOT NULL DEFAULT '0',
+    LATA            int NOT NULL DEFAULT '0',
+    PRIMARY KEY(NPA,NXX)
+);
+
+# The dial_npanxx table contains all of the area codes and prefixes
+# that we can provide service in
+CREATE TABLE dial_npanxx (
+    NPA             int NOT NULL DEFAULT '0',
+    NXX             int NOT NULL DEFAULT '0',
+    LATA            int NOT NULL DEFAULT '0',
+    AccessNumber    bigint NOT NULL DEFAULT '0',
+    PRIMARY KEY(NPA,NXX)
+);
+
+CREATE TABLE dial_cities (
+    AccessNumber    bigint not null default '0',
+    City            varchar(60),
+    State           char(2),
+    PRIMARY KEY(AccessNumber)
+);
+insert into dial_cities values(3606124888, 'Aberdeen', 'WA');
+insert into dial_cities values(3606184888, 'Arlington', 'WA');
+insert into dial_cities values(2532694888, 'Auburn', 'WA');
+insert into dial_cities values(3605444888, 'Belfair', 'WA');
+insert into dial_cities values(4258184888, 'Bellevue', 'WA');
+insert into dial_cities values(3606034888, 'Bellingham', 'WA');
+insert into dial_cities values(4259394888, 'Bothell', 'WA');
+insert into dial_cities values(3605574888, 'Chehalis', 'WA');
+insert into dial_cities values(2534494888, 'Des Moines', 'WA');
+insert into dial_cities values(3606154888, 'Enumclaw', 'WA');
+insert into dial_cities values(4256094888, 'Everett', 'WA');
+insert into dial_cities values(3605434888, 'Everson', 'WA');
+insert into dial_cities values(2532104888, 'Graham', 'WA');
+insert into dial_cities values(4256084888, 'Halls Lake', 'WA');
+insert into dial_cities values(4259964888, 'Issaquah', 'WA');
+insert into dial_cities values(2532394888, 'Kent', 'WA');
+insert into dial_cities values(4256054888, 'Kirkland', 'WA');
+insert into dial_cities values(3605424888, 'Mt. Vernon', 'WA');
+insert into dial_cities values(3605394888, 'Olympia', 'WA');
+insert into dial_cities values(4257384888, 'Renton', 'WA');
+insert into dial_cities values(2062194888, 'Seattle', 'WA');
+insert into dial_cities values(3604474888, 'Silverdale', 'WA');
+insert into dial_cities values(2533214888, 'Sumner', 'WA');
+insert into dial_cities values(2532384888, 'Tacoma', 'WA');
+insert into dial_cities values(2532314888, 'Tacoma/Waverly', 'WA');
+
+# The signups table contains the finished signup data that has been
+# encoded for security.  Eventually, a TAA daemon will import this data 
+# and automate the online signup process.
+CREATE TABLE mod_signup_signups (
+    SignupID        bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    SignupTime      datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+    SignupChecksum  varchar(32) NOT NULL,
+    SignupData      blob NOT NULL default '',
+    PRIMARY KEY(SignupID)
+);
+
+# The catcon (categorized content) table
+# CatConID      - Internal ID
+# ModName       - Who owns this entry, .i.e. "services", "support", etc.
+# ParentID      - The CatConID for the parent of this entry, 0 = top level
+# Tag           - The tag to use, i.e. "qwestdsl", this would appear
+#                 in the URL, i.e. "/services/qwestdsl" or 
+#                 "/services/qwestdsl/qdslbasic"
+# Label         - Shold be a brief representation of what this section is.
+#                 i.e. If the tag were "qdslbasic" the label could be
+#                 "Qwest DSL Basic", for "services" simply "Services".
+# TextBrief     - The sub header text.  If this item has children, then 
+#                 this will be the link text that will be displayed to the user
+#                 for them to click on to get to the children.
+# TextChunk     - The content for this entry.  It will be parsed as a 
+#                 text chunk, so it can contain references to other chunks.
+# TextFooter    - If this item has children, this will be displayed after
+#                 the child list.  If there are no children, then it will
+#                 be displayed after the TextChunk.
+# TextList      - When being displayed as a list item in a parent's list,
+#                 then this item will be displayed in its list, along
+#                 with its "TextBrief".
+CREATE TABLE catcon (
+    CatConID        bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    ModName         varchar(64) NOT NULL DEFAULT '',
+    ParentID        bigint(21) NOT NULL DEFAULT '0',
+    Tag             varchar(64) NOT NULL DEFAULT '',
+    Label           varchar(255) NOT NULL DEFAULT '',
+    TextBrief       varchar(255) NOT NULL DEFAULT '',
+    Level           int(11) NOT NULL DEFAULT '0',
+    TextChunk       blob NOT NULL DEFAULT '',
+    TextFooter      blob NOT NULL DEFAULT '',
+    TextList        blob NOT NULL DEFAULT '',
+    PRIMARY KEY(CatConID),
+    INDEX ModNameIDX(ModName, ParentID)
+);
+
+# catcon_blocks lists the blocks that are on a particular page.
+# If IncludeChildren is set, the block will be inclued on all 
+# the pages that descend from the specified.
+CREATE TABLE catcon_blocks (
+    CatConBlockID   bigint(21) NOT NULL DEFAULT '0' auto_increment,
+    CatConID        bigint(21) NOT NULL DEFAULT '0',
+    BlockChunkID    bigint(21) NOT NULL DEFAULT '0',
+    IncludeChildren int(11) NOT NULL DEFAULT '0',
+    PRIMARY KEY(CatConBlockID)
+);

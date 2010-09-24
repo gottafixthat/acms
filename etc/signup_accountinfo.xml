@@ -1,0 +1,669 @@
+<?xml version="1.0"?>
+<accountinfo>
+    <!--
+      An accountclass Defines the different classes of accounts.  
+      This is the highest level of an account and does not have 
+      specifics, only the most general types of accounts.  
+      Each actual account must be a part of an account class 
+      listed here.
+
+      Subclasses are optional and may or may not be used.  They are mostly
+      for the various levels of DSL we offer.
+    -->
+    <accountclass>
+        <name>qdsl</name>
+        <briefdesc>Qwest Residential DSL</briefdesc>
+        <description>Avvanta DSL Service utilizing Qwest DSL lines.&lt;p&gt;Avvanta's full range of service including Basic and Standard service for home or business use.  Also includes our SOHOxl and SOHOxs services which include static IP addresses and the ability to run servers.  All of Avvanta's DSL services are unmetered and can be used by multiple computers simultaneously.</description>
+        <subclass>
+            <name>qdslbas</name>
+            <briefdesc>Basic DSL Service</briefdesc>
+            <description>Avvanta's Basic DSL Services using Qwest DSL lines are ideal for those looking for basic connectivity.  They include a single mailbox and 1MB of storage space.  Basic DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+        <subclass>
+            <name>qdslstd</name>
+            <briefdesc>Standard DSL Service</briefdesc>
+            <description>Avvanta's Standard DSL Services using Qwest DSL lines include 5 mailboxes, 50MB of storage, personal web space.  Backup dialup access is also included with our Standard accounts to make sure that you stay connected should your DSL line ever go down.  Standard DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+        <subclass>
+            <name>qdslxl</name>
+            <briefdesc>SOHOxl DSL Service</briefdesc>
+            <description>SOHOxl Service from Avvanta provides a single static IP address for your DSL modem and the ability to run public servers.  In addition, SOHOxl services include DNS hosting for one domain, 5 mailboxes, 50MB of storage, personal web space.  Backup dialup access is also included with our SOHOlx accounts to make sure that you stay connected should your DSL line ever go down.  SOHOxl DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+        <subclass>
+            <name>qdslxs</name>
+            <briefdesc>SOHOxs DSL Service</briefdesc>
+            <description>SOHOxs Service from Avvanta provides a block of 8 static IP addresses (5 usable for computers, workstations or servers) and the ability to run public servers.  In addition, SOHOxl services include DNS hosting for two domains, 5 mailboxes, 50MB of storage, personal web space.  Backup dialup access is also included with our SOHOxs accounts to make sure that you stay connected should your DSL line ever go down.  SOHOxs DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+    </accountclass>
+    <accountclass>
+        <name>qbusdsl</name>
+        <briefdesc>Qwest Business DSL</briefdesc>
+        <description>Avvanta DSL Service utilizing Qwest DSL lines.&lt;p&gt;Avvanta's full range of service including Basic and Standard service for home or business use.  Also includes our SOHOxl and SOHOxs services which include static IP addresses and the ability to run servers.  All of Avvanta's DSL services are unmetered and can be used by multiple computers simultaneously.</description>
+        <subclass>
+            <name>qbusdslbas</name>
+            <briefdesc>Basic DSL Service</briefdesc>
+            <description>Avvanta's Basic DSL Services using Qwest DSL lines are ideal for those looking for basic connectivity.  They include a single mailbox and 1MB of storage space.  Basic DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+        <subclass>
+            <name>qbusdslstd</name>
+            <briefdesc>Standard DSL Service</briefdesc>
+            <description>Avvanta's Standard DSL Services using Qwest DSL lines include 5 mailboxes, 50MB of storage, personal web space.  Backup dialup access is also included with our Standard accounts to make sure that you stay connected should your DSL line ever go down.  Standard DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+        <subclass>
+            <name>qbusdslxl</name>
+            <briefdesc>SOHOxl DSL Service</briefdesc>
+            <description>SOHOxl Service from Avvanta provides a single static IP address for your DSL modem and the ability to run public servers.  In addition, SOHOxl services include DNS hosting for one domain, 5 mailboxes, 50MB of storage, personal web space.  Backup dialup access is also included with our SOHOlx accounts to make sure that you stay connected should your DSL line ever go down.  SOHOxl DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+        <subclass>
+            <name>qbusdslxs</name>
+            <briefdesc>SOHOxs DSL Service</briefdesc>
+            <description>SOHOxs Service from Avvanta provides a block of 8 static IP addresses (5 usable for computers, workstations or servers) and the ability to run public servers.  In addition, SOHOxl services include DNS hosting for two domains, 5 mailboxes, 50MB of storage, personal web space.  Backup dialup access is also included with our SOHOxs accounts to make sure that you stay connected should your DSL line ever go down.  SOHOxs DSL service is available for all Qwest DSL speeds.</description>
+        </subclass>
+    </accountclass>
+    <accountclass>
+        <name>vdsl</name>
+        <briefdesc>Verizon DSL</briefdesc>
+        <description>DSL Service using Verizon DSL.  Includes Avvanta's Standard DSL service for home use or small business use.  Also includes Avvanta's SOHOxl and SOHOxs services which include static IP addresses and the ability to run servers.</description>
+        <subclass>
+            <name>vdslstd</name>
+            <briefdesc>Verizon Standard DSL Services</briefdesc>
+            <description>Verizon Standard DSL Services</description>
+        </subclass>
+        <subclass>
+            <name>vdslxl</name>
+            <briefdesc>Verizon SOHOxl DSL Services</briefdesc>
+            <description>Verizon SOHOxl DSL Services</description>
+        </subclass>
+        <subclass>
+            <name>qdslxs</name>
+            <briefdesc>Verizon SOHOxs DSL Services</briefdesc>
+            <description>Verizon SOHOxs DSL Services</description>
+        </subclass>
+    </accountclass>
+    <accountclass>
+        <name>dial</name>
+        <briefdesc>CompleteNet Dialup Service</briefdesc>
+        <description>Dialup Service using standard telephone lines.  Avvanta's Dialup services include unmetered access and multiple mailboxes for the home or business.</description>
+    </accountclass>
+    <accountclass>
+        <briefdesc>WebSmart Hosting Services</briefdesc>
+        <name>hosting</name>
+        <description>WebSmart Hosting Services suitable for startup sites through enterprise class e-Commerce sites.</description>
+    </accountclass>
+    <!--
+    <accountclass>
+        <name>domreg</name>
+        <briefdesc>Domain Name Services</briefdesc>
+        <description>Domain Registration and DNS Services</description>
+    </accountclass>
+    -->
+
+    <!--
+        This secion contains the actual account definitions for each account
+        type that a customer can sign up for.  Each entry contains all of the
+        required information for pricing, flags, descriptions, etc.  Each
+        entry must also be from an appropriate class.  If a class has
+        has subclasses, each account must also have a matching subclass.
+    -->
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslbas</subclass>
+        <name>QBasic256K</name>
+        <briefdesc>DSL Basic 256K</briefdesc>
+        <description>This is the perfect choice when transitioning from dialup service to DSL service.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. DSL Basic 256K service includes 1 mailbox and 1MB of storage space.</description>
+        <price>9.95</price>
+        <setup>10.00</setup>
+        <dslline>qdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>1</mailboxes>
+        <diskspace>1</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslbas</subclass>
+        <name>QBasic1.5M</name>
+        <briefdesc>DSL Basic 1.5M</briefdesc>
+        <description>If you are running multiple computers, will be doing frequent large downloads, or simply want web pages to load faster, then the DSL Basic 1.5M service is the ideal choice.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection. DSL Basic 1.5M service includes 1 mailbox and 1MB of storage space.</description>
+        <price>14.95</price>
+        <setup>10.00</setup>
+        <dslline>qdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>1</mailboxes>
+        <diskspace>1</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslbas</subclass>
+        <name>QBasicPrem</name>
+        <briefdesc>DSL Basic eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  Designed for power users and businesses, it is perfectly matched with people running multiple computers, online gamers, small businesses and branch offices.  It offers maximum speeds reaching a blistering 7M download/896K upload, more than 140 times faster than the average modem connection. DSL Basic eXtreme service includes 1 mailbox and 1MB of storage space.</description>
+        <price>19.95</price>
+        <setup>10.00</setup>
+        <dslline>qdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>1</mailboxes>
+        <diskspace>1</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslstd</subclass>
+        <name>QDSLStd256K</name>
+        <briefdesc>DSL Standard 256K</briefdesc>
+        <description>This is the perfect choice when transitioning from dialup service to DSL service.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. DSL Standard 256K service includes 3 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>14.95</price>
+        <setup>10.00</setup>
+        <dslline>qdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>3</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslstd</subclass>
+        <name>QDSLPlus</name>
+        <briefdesc>DSL Plus</briefdesc>
+        <description>DSL Plus service is ideal if you are running multiple computers, will be doing frequent large downloads, or simply want web pages to load faster.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection.  DSL Plus service includes 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>21.95</price>
+        <setup>10.00</setup>
+        <dslline>qdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslstd</subclass>
+        <name>QDSLeXt</name>
+        <briefdesc>DSL eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  Designed for power users and businesses, it is perfectly matched with people running multiple computers, online gamers, small businesses and branch offices.  It offers maximum speeds reaching a blistering 7M download/896K upload, more than 140 times faster than the average modem connection.  DSL eXtreme service includes 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>26.95</price>
+        <setup>10.00</setup>
+        <dslline>qdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslxl</subclass>
+        <name>QDSLxlBasic</name>
+        <briefdesc>SOHOxl Basic</briefdesc>
+        <description>The SOHOxl Basic account is well suited for general use and low traffic servers.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. SOHOxl Basic service includes a single static IP address, DNS service for one domain, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>19.95</price>
+        <setup>20.00</setup>
+        <dslline>qdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslxl</subclass>
+        <name>QDSLxlPlus</name>
+        <briefdesc>SOHOxl Plus</briefdesc>
+        <description>The SOHOxl Plus account is the perfect choice for connecting multiple computers and low traffic servers to the Internet.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection. SOHOxl Plus service includes a single static IP address, DNS service for one domain, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>31.95</price>
+        <setup>20.00</setup>
+        <dslline>qdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslxl</subclass>
+        <name>QDSLxlPrem</name>
+        <briefdesc>SOHOxl eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  The SOHOxl eXtreme account provides enough bandwidth for connecting multiple computers and low traffic servers to the Internet.  It offers speeds of up to 7M download/896K upload, more than 140 times faster than the average modem connection. SOHOxl eXtreme service includes a single static IP address, DNS service for one domain, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>31.95</price>
+        <setup>20.00</setup>
+        <dslline>qdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslxs</subclass>
+        <name>QDSLxsBasic</name>
+        <briefdesc>SOHOxs Basic</briefdesc>
+        <description>The SOHOxs Basic account is well suited for general use and low traffic servers.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. SOHOxs Basic service includes a block of 8 IP addresses (5 usable for computers, servers or routers), DNS service for two domains, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>24.95</price>
+        <setup>20.00</setup>
+        <dslline>qdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslxs</subclass>
+        <name>QDSLxsPlus</name>
+        <briefdesc>SOHOxs Plus</briefdesc>
+        <description>The SOHOxs Plus account is the perfect choice for connecting multiple computers and low traffic servers to the Internet.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection. SOHOxs Plus service includes a block of 8 IP addresses (5 usable for computers, servers or routers), DNS service for two domains, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>41.95</price>
+        <setup>20.00</setup>
+        <dslline>qdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qdsl</class>
+        <subclass>qdslxs</subclass>
+        <name>QDSLxsPrem</name>
+        <briefdesc>SOHOxs eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  The SOHOxs eXtreme account provides enough bandwidth to easily connect multiple computers and low traffic servers to the Internet.  It offers speeds of up to 7M download/896K upload, more than 140 times faster than the average modem connection. SOHOxs eXtreme service includes a block of 8 IP addresses (5 usable for computers, servers or routers), DNS service for two domains, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>51.95</price>
+        <setup>20.00</setup>
+        <dslline>qdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+
+    <!-- Qwest Business DSL -->
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslbas</subclass>
+        <name>QBusBasic256K</name>
+        <briefdesc>DSL Basic 256K</briefdesc>
+        <description>This is the perfect choice when transitioning from dialup service to DSL service.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. DSL Basic 256K service includes 1 mailbox and 1MB of storage space.</description>
+        <price>9.95</price>
+        <setup>10.00</setup>
+        <dslline>qbusdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>1</mailboxes>
+        <diskspace>1</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslbas</subclass>
+        <name>QBusBasic1.5M</name>
+        <briefdesc>DSL Basic 1.5M</briefdesc>
+        <description>If you are running multiple computers, will be doing frequent large downloads, or simply want web pages to load faster, then the DSL Basic 1.5M service is the ideal choice.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection. DSL Basic 1.5M service includes 1 mailbox and 1MB of storage space.</description>
+        <price>14.95</price>
+        <setup>10.00</setup>
+        <dslline>qbusdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>1</mailboxes>
+        <diskspace>1</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslbas</subclass>
+        <name>QBusBasicPrem</name>
+        <briefdesc>DSL Basic eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  Designed for power users and businesses, it is perfectly matched with people running multiple computers, online gamers, small businesses and branch offices.  It offers maximum speeds reaching a blistering 7M download/896K upload, more than 140 times faster than the average modem connection. DSL Basic eXtreme service includes 1 mailbox and 1MB of storage space.</description>
+        <price>19.95</price>
+        <setup>10.00</setup>
+        <dslline>qbusdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>1</mailboxes>
+        <diskspace>1</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslstd</subclass>
+        <name>QBusDSLStd256K</name>
+        <briefdesc>DSL Standard 256K</briefdesc>
+        <description>This is the perfect choice when transitioning from dialup service to DSL service.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. DSL Standard 256K service includes 3 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>14.95</price>
+        <setup>10.00</setup>
+        <dslline>qbusdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>3</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslstd</subclass>
+        <name>QBusDSLPlus</name>
+        <briefdesc>DSL Plus</briefdesc>
+        <description>DSL Plus service is ideal if you are running multiple computers, will be doing frequent large downloads, or simply want web pages to load faster.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection.  DSL Plus service includes 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>21.95</price>
+        <setup>10.00</setup>
+        <dslline>qbusdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslstd</subclass>
+        <name>QBusDSLeXt</name>
+        <briefdesc>DSL eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  Designed for power users and businesses, it is perfectly matched with people running multiple computers, online gamers, small businesses and branch offices.  It offers maximum speeds reaching a blistering 7M download/896K upload, more than 140 times faster than the average modem connection.  DSL eXtreme service includes 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>26.95</price>
+        <setup>10.00</setup>
+        <dslline>qbusdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslxl</subclass>
+        <name>QBusDSLxlBasic</name>
+        <briefdesc>SOHOxl Basic</briefdesc>
+        <description>The SOHOxl Basic account is well suited for general use and low traffic servers.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. SOHOxl Basic service includes a single static IP address, DNS service for one domain, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>19.95</price>
+        <setup>20.00</setup>
+        <dslline>qbusdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslxl</subclass>
+        <name>QBusDSLxlPlus</name>
+        <briefdesc>SOHOxl Plus</briefdesc>
+        <description>The SOHOxl Plus account is the perfect choice for connecting multiple computers and low traffic servers to the Internet.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection. SOHOxl Plus service includes a single static IP address, DNS service for one domain, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>31.95</price>
+        <setup>20.00</setup>
+        <dslline>qbusdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslxl</subclass>
+        <name>QBusDSLxlPrem</name>
+        <briefdesc>SOHOxl eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  The SOHOxl eXtreme account provides enough bandwidth for connecting multiple computers and low traffic servers to the Internet.  It offers speeds of up to 7M download/896K upload, more than 140 times faster than the average modem connection. SOHOxl eXtreme service includes a single static IP address, DNS service for one domain, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>31.95</price>
+        <setup>20.00</setup>
+        <dslline>qbusdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslxs</subclass>
+        <name>QBusDSLxsBasic</name>
+        <briefdesc>SOHOxs Basic</briefdesc>
+        <description>The SOHOxs Basic account is well suited for general use and low traffic servers.  It offers speeds of up to 256K download/256K upload, more than 5 times faster than the average modem connection. SOHOxs Basic service includes a block of 8 IP addresses (5 usable for computers, servers or routers), DNS service for two domains, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>24.95</price>
+        <setup>20.00</setup>
+        <dslline>qbusdsl256K</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslxs</subclass>
+        <name>QBusDSLxsPlus</name>
+        <briefdesc>SOHOxs Plus</briefdesc>
+        <description>The SOHOxs Plus account is the perfect choice for connecting multiple computers and low traffic servers to the Internet.  It offers speeds of up to 1.5M download/896K upload, more than 30 times faster than the average modem connection. SOHOxs Plus service includes a block of 8 IP addresses (5 usable for computers, servers or routers), DNS service for two domains, 5 mailboxes, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>41.95</price>
+        <setup>20.00</setup>
+        <dslline>qbusdsl1.5M</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>qbusdsl</class>
+        <subclass>qbusdslxs</subclass>
+        <name>QBusDSLxsPrem</name>
+        <briefdesc>SOHOxs eXtreme</briefdesc>
+        <description>Avvanta's DSL eXtreme service is the fastest DSL service currently available.  The SOHOxs eXtreme account provides enough bandwidth to easily connect multiple computers and low traffic servers to the Internet.  It offers speeds of up to 7M download/896K upload, more than 140 times faster than the average modem connection. SOHOxs eXtreme service includes a block of 8 IP addresses (5 usable for computers, servers or routers), DNS service for two domains, personal web space, secure instant messaging, backup dialup service and 50MB of storage space.</description>
+        <price>51.95</price>
+        <setup>20.00</setup>
+        <dslline>qbusdslprem</dslline>
+        <flags>DChan=1,DSL,PPP,Routing,WebSpace,SOHO</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+
+    
+    <!-- Verizon DSL Services -->
+    <account>
+        <class>vdsl</class>
+        <subclass>vdslstd</subclass>
+        <name>VDSLStd</name>
+        <briefdesc>DSL Standard</briefdesc>
+        <description>DSL Standard</description>
+        <price>19.95</price>
+        <setup>10.00</setup>
+        <telco>
+            <price>37.50</price>
+            <setup>60.00</setup>
+        </telco>
+        <flags>DChan=1,PPP,Routing,WebSpace</flags>
+        <instant>0</instant>
+        <mailboxes>5</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+    <account>
+        <class>dial</class>
+        <name>dialbas</name>
+        <briefdesc>CompleteNet Basic Dialup Service</briefdesc>
+        <description>Avvanta's CompleteNet Basic dialup service includes 56K or single channel ISDN access, 3 mailboxes, 50MB of personal email or web space and full access to the CCC.  Includes email antivirus and antispam tools through Avvanta's Advanced Spam Protection.  For personal or business use.</description>
+        <price>18.95</price>
+        <setup>0.00</setup>
+        <flags>Routing,NNTP,WebSpace,ClariNet,Dialup,FTPSpace,PPP</flags>
+        <instant>1</instant>
+        <mailboxes>3</mailboxes>
+        <diskspace>50</diskspace>
+    </account>
+
+    <!--
+        Modem options contains the choices and pricing information
+        for various modems that the customer may purchase.
+    -->
+    <modem>
+        <class>qdsl</class>
+        <source>customer</source>
+        <option>none</option>
+        <price>0.00</price>
+        <shipping>0.0</shipping>
+        <briefdesc>Already own a Qwest compatible DSL modem</briefdesc>
+        <description>Select this option if you already own a Qwest compatible DSL modem and plan to use it with your new Avvanta account.</description>
+    </modem>
+    <modem>
+        <class>qdsl</class>
+        <source>telco</source>
+        <option>rentgt701</option>
+        <price>5.00</price>
+        <period>month</period>
+        <shipping>9.95</shipping>
+        <briefdesc>Rent an ActionTec GT701 DSL modem</briefdesc>
+        <description>Select this option if you would like to rent the DSL modem from Qwest for $5.00/month.  This will be added to your phone bill along with Qwest's DSL service charges.  A one time $9.95 shipping and handling will also be included with this option.</description>
+    </modem>
+    <modem>
+        <class>qdsl</class>
+        <source>telco</source>
+        <option>purchasegt701</option>
+        <price>59.95</price>
+        <shipping>9.95</shipping>
+        <briefdesc>Purchase an ActionTec GT701 DSL modem</briefdesc>
+        <description>Select this option if you would like to purchase the DSL modem from Qwest for $59.95.  This will be added to your next phone bill following your activation date along with Qwest's DSL service charges.  A one time $9.95 shipping and handling will also be included with this option.</description>
+    </modem>
+    <modem>
+        <class>qdsl</class>
+        <source>telco</source>
+        <option>rent2wire</option>
+        <price>8.00</price>
+        <period>month</period>
+        <shipping>14.95</shipping>
+        <briefdesc>Rent a 2Wire Advanced Networking DSL modem</briefdesc>
+        <description>Select this option if you would like to rent the 2Wire Advanced Networking DSL modem from Qwest for $8.00/month.  This will be added to your phone bill along with Qwest's DSL service charges.  A one time $14.95 shipping and handling will also be included with this option.</description>
+    </modem>
+    <modem>
+        <class>qdsl</class>
+        <source>telco</source>
+        <option>purchase2wire</option>
+        <price>99.95</price>
+        <shipping>14.95</shipping>
+        <briefdesc>Purchase a 2Wire Advanced Networking DSL modem</briefdesc>
+        <description>Select this option if you would like to purchase the 2Wire Advanced Networking DSL modem from Qwest.  This will be added to your next phone bill following your activation date along with Qwest's DSL service charges.  A one time $14.95 shipping and handling will also be included with this option.</description>
+        <promo>Modem purchase price reflects a $50.00 instant rebate from Qwest.</promo>
+    </modem>
+
+    <!-- Qwest Business DSL Modem Pricing -->
+    <modem>
+        <class>qbusdsl</class>
+        <source>customer</source>
+        <option>none</option>
+        <price>0.00</price>
+        <shipping>0.0</shipping>
+        <briefdesc>Already own a Qwest compatible DSL modem</briefdesc>
+        <description>Select this option if you already own a Qwest compatible DSL modem and plan to use it with your new Avvanta account.</description>
+    </modem>
+    <modem>
+        <class>qbusdsl</class>
+        <source>telco</source>
+        <option>rentgt701</option>
+        <price>5.00</price>
+        <period>month</period>
+        <shipping>9.95</shipping>
+        <briefdesc>Rent an ActionTec GT701 DSL modem</briefdesc>
+        <description>Select this option if you would like to rent the DSL modem from Qwest for $5.00/month.  This will be added to your phone bill along with Qwest's DSL service charges.  A one time $9.95 shipping and handling will also be included with this option.</description>
+    </modem>
+    <modem>
+        <class>qbusdsl</class>
+        <source>telco</source>
+        <option>purchasegt701</option>
+        <price>59.95</price>
+        <shipping>9.95</shipping>
+        <briefdesc>Purchase an ActionTec GT701 DSL modem</briefdesc>
+        <description>Select this option if you would like to purchase the DSL modem from Qwest for $59.95.  This will be added to your next phone bill following your activation date along with Qwest's DSL service charges.  A one time $9.95 shipping and handling will also be included with this option.</description>
+    </modem>
+    <modem>
+        <class>qbusdsl</class>
+        <source>telco</source>
+        <option>rent2wire</option>
+        <price>8.00</price>
+        <period>month</period>
+        <shipping>14.95</shipping>
+        <briefdesc>Rent a 2Wire Advanced Networking DSL modem</briefdesc>
+        <description>Select this option if you would like to rent the 2Wire Advanced Networking DSL modem from Qwest for $8.00/month.  This will be added to your phone bill along with Qwest's DSL service charges.  A one time $14.95 shipping and handling will also be included with this option.</description>
+    </modem>
+    <modem>
+        <class>qbusdsl</class>
+        <source>telco</source>
+        <option>purchase2wire</option>
+        <price>129.95</price>
+        <shipping>14.95</shipping>
+        <briefdesc>Purchase a 2Wire Advanced Networking DSL modem</briefdesc>
+        <description>Select this option if you would like to purchase the 2Wire Advanced Networking DSL modem from Qwest.  This will be added to your next phone bill following your activation date along with Qwest's DSL service charges.  A one time $14.95 shipping and handling will also be included with this option.</description>
+        <promo>Modem purchase price reflects a $20.00 instant rebate from Qwest.</promo>
+    </modem>
+
+    <!-- This section contains the actual DSL lines with their speeds
+         that are available from the various telcos.
+    -->
+    <dslline>
+        <class>qdsl</class>
+        <name>qdsl256K</name>
+        <telco>Qwest</telco>
+        <briefdesc>Qwest Choice DSL</briefdesc>
+        <description>Qwest Choice DSL</description>
+        <setup>0.00</setup>
+        <promo>The setup charges reflect the current Qwest promotion to waive the normal $99.00 activation fee.</promo>
+        <price>15.00</price>
+        <ispchange>9.99</ispchange>
+        <download>256K</download>
+        <upload>256K</upload>
+        <installtime>4</installtime>
+    </dslline>
+    <dslline>
+        <class>qdsl</class>
+        <name>qdsl1.5M</name>
+        <telco>Qwest</telco>
+        <briefdesc>Qwest Choice DSL Deluxe</briefdesc>
+        <description>Qwest Choice DSL Deluxe</description>
+        <setup>0.00</setup>
+        <promo>The setup charges reflect the current Qwest promotion to waive the normal $99.00 activation fee.</promo>
+        <price>28.00</price>
+        <ispchange>9.99</ispchange>
+        <download>1.5M</download>
+        <upload>896K</upload>
+        <installtime>4</installtime>
+    </dslline>
+    <dslline>
+        <class>qdsl</class>
+        <name>qdslprem</name>
+        <telco>Qwest</telco>
+        <briefdesc>Qwest Choice DSL Premier</briefdesc>
+        <description>Qwest Choice DSL Premier</description>
+        <setup>0.00</setup>
+        <promo>The setup charges reflect the current Qwest promotion to waive the normal $99.00 activation fee.</promo>
+        <price>38.00</price>
+        <ispchange>9.99</ispchange>
+        <download>7M</download>
+        <upload>896K</upload>
+        <installtime>4</installtime>
+    </dslline>
+    <dslline>
+        <class>qbusdsl</class>
+        <name>qbusdsl256K</name>
+        <telco>Qwest</telco>
+        <briefdesc>Qwest Choice DSL</briefdesc>
+        <description>Qwest Choice DSL</description>
+        <setup>0.00</setup>
+        <promo>The setup charges reflect the current Qwest promotion to waive the normal $99.00 activation fee.</promo>
+        <price>25.00</price>
+        <ispchange>9.99</ispchange>
+        <download>256K</download>
+        <upload>256K</upload>
+        <installtime>4</installtime>
+    </dslline>
+    <dslline>
+        <class>qbusdsl</class>
+        <name>qbusdsl1.5M</name>
+        <telco>Qwest</telco>
+        <briefdesc>Qwest Choice DSL Deluxe</briefdesc>
+        <description>Qwest Choice DSL Deluxe</description>
+        <setup>0.00</setup>
+        <promo>The setup charges reflect the current Qwest promotion to waive the normal $99.00 activation fee.</promo>
+        <price>37.50</price>
+        <ispchange>9.99</ispchange>
+        <download>1.5M</download>
+        <upload>896K</upload>
+        <installtime>4</installtime>
+    </dslline>
+    <dslline>
+        <class>qbusdsl</class>
+        <name>qbusdslprem</name>
+        <telco>Qwest</telco>
+        <briefdesc>Qwest Choice DSL Premier</briefdesc>
+        <description>Qwest Choice DSL Premier</description>
+        <setup>0.00</setup>
+        <promo>The setup charges reflect the current Qwest promotion to waive the normal $99.00 activation fee.</promo>
+        <price>56.25</price>
+        <ispchange>9.99</ispchange>
+        <download>7M</download>
+        <upload>896K</upload>
+        <installtime>4</installtime>
+    </dslline>
+</accountinfo>

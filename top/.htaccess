@@ -1,0 +1,10 @@
+RewriteEngine on
+#RewriteBase /home/marc/src/acms/top
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{QUERY_STRING}     !=^$
+RewriteRule ^(.*)$   /acms.php?page=$1&%{QUERY_STRING}  [L]
+
+RewriteCond %{QUERY_STRING}     =^$
+RewriteRule ^(.*)$   /acms.php?page=$1   [L]
+
