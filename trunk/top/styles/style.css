@@ -15,7 +15,7 @@ DIV {
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
-    color: transparent;
+    color: #000000;
     background-color: transparent;
     font-weight: normal;
     font-size: 12px; 
@@ -417,7 +417,7 @@ div.shadedbox {
 	padding-top:   2px;
 	padding-bottom:   2px;
 	padding-right:   5px;
-	color:   transparent;
+	color:   #000000;
     background-color: #E0E0E0;
 	border:   1px solid black;
 }
