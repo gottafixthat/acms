@@ -118,7 +118,7 @@ function showChunk($chunk, $optArgs = array())
             $app->writeLog("Requested page '$chunk' - Permission Denied");
         }
     } else {
-        if (strlen($chunk)) {
+        if (!empty($chunk)) {
             ob_end_clean();
             $app->writeLog("Requested page '$chunk' - 404 Not Found");
             header("HTTP/1.1 404 Not Found");
@@ -131,7 +131,7 @@ function showChunk($chunk, $optArgs = array())
 
     // Check to see if we got the page, if we didn't, load the home page.
     if (!$gotPage) {
-        if (strlen($chunk)) {
+        if (!empty($chunk)) {
             $app->writeLog("No page found for '$chunk', redirecting");
             header("Location: /");
             exit;
@@ -173,7 +173,7 @@ function showChunk($chunk, $optArgs = array())
     // Is there content in this page?  If there is, add it into Zone 2 (content)
     //$content = $app->parseChunk($content);
     $content = $cc->parse();
-    if (strlen($content)) {
+    if (!empty($content)) {
         // Are we the admin?
         $nav = "";
         if ($app->hasAccess("write", $cc->fields["Perms"], $cc->fields["UserID"], $cc->fields["GroupID"])) {

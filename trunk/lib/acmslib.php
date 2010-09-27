@@ -26,7 +26,7 @@
 
 
 error_reporting(E_ALL);
-//ob_start();
+ob_start();
 //ob_implicit_flush(0);
 
 // Our "pound defines"
@@ -150,7 +150,7 @@ var $compressOutput = 0;
 
 function acmsApp()
 {
-    global  $INCLUDE_DIR, $ACMSVersion, $HTTP_COOKIE_VARS, $ACMSRewrite;
+    global  $INCLUDE_DIR, $ACMSVersion, $ACMSRewrite;
     global  $siteConfig, $ACMSCfg;
 
     // Start our timer
@@ -210,7 +210,7 @@ function acmsApp()
 
 
     // Create our database connection
-    if (!$this->acmsDB = mysql_pconnect($this->acmsDBHost, $this->acmsDBUser, $this->acmsDBPass)) {
+    if (!$this->acmsDB = mysql_connect($this->acmsDBHost, $this->acmsDBUser, $this->acmsDBPass)) {
         $this->writeLog("Unable to communicate with DB Host '" . $this->acmsDBHost . "' as '" . $this->acmsDBUser . "'");
         die("1 - Unable to connect to the database host<BR>");
     }
@@ -266,8 +266,8 @@ function acmsApp()
     }
 
     
-    if (isset($HTTP_COOKIE_VARS[$this->sessCookieName])) {
-        $sql = "SELECT * from Sessions WHERE SessionID = '" . $HTTP_COOKIE_VARS[$this->sessCookieName] . "'";
+    if (!empty($_REQUEST[$this->sessCookieName])) {
+        $sql = "SELECT * from Sessions WHERE SessionID = '" . $_REQUEST[$this->sessCookieName] . "'";
         //print "Query = '$sql'<BR>";
         if ($result = mysql_query($sql, $this->acmsDB)) {
             // So far, so good.  The query at least succeeded
@@ -317,7 +317,7 @@ function acmsApp()
         // return false;
     }
     
-    if (isset($this->acmsSessVars["SessionKey"]) && strcmp($this->acmsSessVars["SessionKey"], $HTTP_COOKIE_VARS[$this->sessCookieKey])) {
+    if (isset($this->acmsSessVars["SessionKey"]) && strcmp($this->acmsSessVars["SessionKey"], $_REQUEST[$this->sessCookieKey])) {
         syslog(LOG_INFO, "Invalid session key detected!");
         // print "Invalid session key!<BR>";
         unset($this->acmsSessionID);
@@ -329,8 +329,8 @@ function acmsApp()
         return;
     } else {
         //print "Session valid and loaded.<BR>";
-        $this->acmsSessionID  = $HTTP_COOKIE_VARS[$this->sessCookieName];
-        $this->acmsSessionKey = $HTTP_COOKIE_VARS[$this->sessCookieKey];
+        $this->acmsSessionID  = $_REQUEST[$this->sessCookieName];
+        $this->acmsSessionKey = $_REQUEST[$this->sessCookieKey];
         //$this->acmsSessionKey = $this->acmsSessVars["SessionKey"];
         // If there is a login ID set, we are logged in.
         //syslog(LOG_INFO, "Checking for a login...");
@@ -436,7 +436,7 @@ function newDBConnection()
 {
     $newConn = 0;
     // Create our database connection
-    if (!$newConn = mysql_pconnect($this->acmsDBHost, $this->acmsDBUser, $this->acmsDBPass)) {
+    if (!$newConn = mysql_connect($this->acmsDBHost, $this->acmsDBUser, $this->acmsDBPass)) {
         die("1 - Unable to connect to the database host<BR>");
     }
     // Now, select the database
@@ -454,8 +454,6 @@ function newDBConnection()
 
 function startSession()
 {
-    global $HTTP_COOKIE_VARS;
-
     // Check to see if they have a session cookie set.
     if (!isset($this->acmsSessionID)) {
         // No session cookie found.
@@ -518,7 +516,7 @@ function startSession()
         if (!$goodSessID) {
             // Bad session.  Kill it and start over.
             // Find their cookies and remove them.
-            unset($HTTP_COOKIE_VARS[$this->sessCookieName]);
+            unset($_REQUEST[$this->sessCookieName]);
             $this->startSession();
         }
     }
@@ -554,7 +552,7 @@ function checkLogin()
     global  $AUTH_METHODS, $INCLUDE_DIR;
     $retVal = false;
 
-    if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
+    if (!empty($_REQUEST['username']) && !empty($_REQUEST['password'])) {
         // Both a username and password were given.  Try to authenticate.
         $login = ereg_replace("[^a-zA-Z0-9\._-]", "", $_REQUEST['username']);
         $pw    = $_REQUEST['password'];
@@ -667,7 +665,6 @@ function logout()
 function setSessVar($key, $val)
 {
     //$this->writeLog("Setting session variable $key/$val for session " . $this->acmsSessionID);
-    // global $HTTP_COOKIE_VARS;
     //if (!$this->loggedIn) return;
     // Check to see if the session variable already exists.  If so, 
     // We just need to update it.  If not, we need to create a new one.
@@ -707,7 +704,7 @@ function setSessVar($key, $val)
     
     // Create a new database connection so we can be called within a 
     // query loop.
-    $tmpDB = mysql_pconnect($this->acmsDBHost, $this->acmsDBUser, $this->acmsDBPass);
+    $tmpDB = mysql_connect($this->acmsDBHost, $this->acmsDBUser, $this->acmsDBPass);
     if (!$tmpDB) {
         $this->fatalError("CCC", "Unable to connect to the database.  Please try again later.");
     }
@@ -730,6 +727,7 @@ function setSessVar($key, $val)
 
 function setupMainPage()
 {
+    $this->writeLog('Setting up main page');
     $this->handlerExec('page', 'HomePage');
 }   // setupMainPage
 
@@ -749,10 +747,10 @@ function exec()
     // Are we doing an internal action?  This is specified by the 'ia'
     // argument.  If an action is processed, it does nothing else.
     // Actions are for things like logging out, etc.
-    if (isset($_REQUEST['ia'])) {
+    if (!empty($_REQUEST['ia'])) {
         $this->processAction($_REQUEST['ia']);
         return;
-    } else if (isset($_REQUEST['page'])) {
+    } else if (!empty($_REQUEST['page'])) {
         // If they specified a Page, we automatically use the page handler.
         // Check to see if they specified a "reserved" page first, before
         // passing it to the main handlerExec function.
@@ -772,15 +770,15 @@ function exec()
             $this->handlerExec('page', $_REQUEST['page']);
         }
         return;     // We're done.
-    } else if (isset($_REQUEST['chunk']) && strlen($this->getHandler($_REQUEST['chunk']))) {
+    } else if (!empty($_REQUEST['chunk']) && strlen($this->getHandler($_REQUEST['chunk']))) {
         $this->handlerExec($this->getHandler($_REQUEST['chunk']), $_REQUEST['chunk']);
         return;
-    } else if (isset($_REQUEST['handler']) && isset($_REQUEST['name'])) {
+    } else if (!empty($_REQUEST['handler']) && !empty($_REQUEST['name'])) {
         // Now check to see if we were given a handler.  If so,
         // we pass control off to the handler to Show the content.
         $this->handlerExec($_REQUEST['handler'], $_REQUEST['name']);
         return;     // We're done.
-    } else if (isset($_REQUEST['mod'])) {
+    } else if (!empty($_REQUEST['mod'])) {
         // Check for a module load.
         // Load the module and pass control to it.
         $modname = eregi_replace("[^a-z0-9]", "", $_REQUEST['mod']);
@@ -852,7 +850,7 @@ function loadHandler($handler)
     if (file_exists($handlerfile) && is_readable($handlerfile)) {
         // Okay, it exists and we can read it.
         if (ACMS_DEBUG) {
-            $this->writeLog("Loading handler '$handlerfile'");
+            $this->writeLog("loadHandler() - Loading handler '$handlerfile'");
         }
         include_once($handlerfile);
         $retVal = true;
@@ -905,11 +903,11 @@ function handlerExec($handler, $name)
         // Okay it is a module we're calling.
         // Load up the module and hand control over to it.
         if (ACMS_DEBUG) {
-            $this->writeLog("Loading module[2] '$module'");
+            $this->writeLog("handlerExec() - Loading module[2] '$module'");
         }
         require_once($module);
         if (ACMS_DEBUG) {
-            $this->writeLog("Executing 'modules[" . $chunkName . "]->exec($optArgs)'");
+            $this->writeLog("handlerExec() - Executing 'modules[" . $chunkName . "]->exec($optArgs)'");
         }
         $modules[$chunkName]->exec("exec", $optArgs);
         $this->render();
@@ -919,10 +917,10 @@ function handlerExec($handler, $name)
 
     //echo "$handlername, $chunkName";
     if (ACMS_DEBUG) {
-        $this->writeLog("Calling handler '$handler->showChunk('$chunkName', '$optArgs')'");
+        $this->writeLog("handlerExec() - Calling handler '$handler::showChunk('$chunkName', '$optArgs')'");
     }
     $handlers[$handler]->showChunk($chunkName, $optArgs);
-    $content = ob_get_contents();
+    //$content = ob_get_contents();
     //echo "$content";
     return;     // We're done.
 }
@@ -1692,7 +1690,8 @@ function loadPersistantBlocks()
     // We only want to load the blocks if there is a block handler.
     if ($this->loadHandler("block")) {
         $sql = "select Chunks.ChunkName from Chunks, Chunks_block where Chunks.Handler = 'block' and Chunks.ChunkID = Chunks_block.ChunkID and Chunks_block.Persistant <> 0";
-        if ($result = mysql_query($sql, $this->acmsDB)) {
+        $result = mysql_query($sql, $this->acmsDB);
+        if ($result) {
             if (mysql_num_rows($result)) {
                 // Load up the rows.
                 while ($curRow = mysql_fetch_array($result)) {
@@ -1706,6 +1705,8 @@ function loadPersistantBlocks()
                 }
             }
         }
+    } else {
+        $this->writeLog("Loading persistant blocks failed.  Unable to load block handler.");
     }
 }
 
