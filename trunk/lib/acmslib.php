@@ -39,7 +39,7 @@ define("SECHEAD_ZONE",  5);
 
 define("ACMS_DEBUG",    1);
 
-define("SYSTEM_INI",    "/usr/local/etc/acms.ini");
+define("SYSTEM_INI",    "/usr/local/acms/etc/acms.ini");
 
 // Paths where we store things
 define('SMARTY_CACHE',              "/var/lib/acms/cache");
@@ -91,7 +91,7 @@ $autoAddAuthedUsers = true;
 // return true or false, whether the authentication was successful.  
 // If one returns false, then the next one in line is checked.
 global  $AUTH_METHODS;
-$AUTH_METHODS = array('ldap');
+$AUTH_METHODS = array('pop3', 'ldap');
 
 // Get the Chunk class
 require_once($INCLUDE_DIR."chunklib.php");
